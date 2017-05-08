@@ -148,18 +148,18 @@ for(i in 1:nrow(projects)){
   
 }
 
-### 2.4. Добавляем информацию про год и месяц
+### 3.6. Добавляем информацию про год и месяц
 result_data$year_month <- format.Date(Sys.Date(), "%Y%m")
 result_data$year_month <- as.integer(result_data$year_month)
 
-### 3. Запись данных в Google Таблицу на лист ga_db. Дописываем построчно в конец.
+### 4. Запись данных в Google Таблицу на лист ga_db. Дописываем построчно в конец.
 for(i in 1:nrow(result_data)){
   gs_add_row(spreadsheet, ws="ga_db", input=c(result_data$domain[i],
                                               result_data$ga_sessions[i],
                                               result_data$year_month[i]))
 }
 
-# 4. Записываем список нерасшаренных проектов на лист "Нерасшаренные".
+# 5. Записываем список нерасшаренных проектов на лист "Нерасшаренные".
 gs_edit_cells(ss = spreadsheet,
               ws = "Нерасшаренные",
               input = not_shared_projects,
@@ -168,6 +168,6 @@ gs_edit_cells(ss = spreadsheet,
               verbose = T)
 
 #####
-# 5. Сохранение результата в csv
+# 6. Сохранение результата в csv
 write.csv(x = result_data, file = paste0(format.Date(Sys.Date(), "%Y-%m"),
                                          "_GA_organic_traf.csv"))
