@@ -15,7 +15,7 @@ library(googlesheets)
 # 1.2. Загружаем токен из файла
 gs_auth(token = "spreadsheets.token.rds")
 
-# 1.3. Получаем справочник проектов из Google таблицы, заполненой IM  в ручную
+# 1.3. Получаем справочник проектов из Google таблицы, заполненой вручную. Пример справочника https://goo.gl/rjLPOH .
 spreadsheet <- gs_key("КЛЮЧ-ТАБЛИЦЫ", 
                       lookup = NULL, 
                       visibility = NULL, 
