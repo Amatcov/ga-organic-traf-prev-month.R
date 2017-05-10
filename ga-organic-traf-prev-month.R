@@ -1,3 +1,6 @@
+# Разработано в Netpeak. 
+# Если что-то не получается, пишите Ivan Kutas https://www.facebook.com/ivankutas
+
 # Подключение требуемых пакетов
 library(googleAuthR)
 library(googleAnalyticsR)
